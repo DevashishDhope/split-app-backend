@@ -1,0 +1,84 @@
+{
+  "info": {
+    "name": "Split App API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Expense Management",
+      "item": [
+        {
+          "name": "Add Expense - Dinner",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/expenses",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"amount\": 600,\n    \"description\": \"Dinner at restaurant\",\n    \"paidBy\": \"Shantanu\",\n    \"splitType\": \"equal\",\n    \"splitDetails\": {\n        \"Shantanu\": 200,\n        \"Sanket\": 200,\n        \"Om\": 200\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Add Expense - Groceries",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/expenses",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"amount\": 450,\n    \"description\": \"Groceries\",\n    \"paidBy\": \"Sanket\",\n    \"splitType\": \"equal\",\n    \"splitDetails\": {\n        \"Shantanu\": 150,\n        \"Sanket\": 150,\n        \"Om\": 150\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "List All Expenses",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/expenses"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Settlements & People",
+      "item": [
+        {
+          "name": "Get All People",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/people"
+          }
+        },
+        {
+          "name": "Get Current Balances",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/balances"
+          }
+        },
+        {
+          "name": "Get Settlement Summary",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/settlements"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ]
+} 
