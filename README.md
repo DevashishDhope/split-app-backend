@@ -227,4 +227,9 @@ Settlement:
 - Environment variable protection
 - CORS configuration
 
+## Known Limitations or Assumptions
+
+- The system currently assumes all expenses are split equally...
+- Floating-point precision: While Node.js handles decimals...
+- Does not currently support partial payments or tracking historical settlements...
 
